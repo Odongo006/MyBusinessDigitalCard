@@ -1,0 +1,475 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --black:#0B0B0D;
+    --dark:#1B1B1F;
+    --white:#FFFFFF;
+    --gold:#B89A4A;
+    --goldGlow:rgba(184,154,74,.15);
+}
+
+body{
+    min-height:100vh;
+    background:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:50px 20px;
+    font-family:'Montserrat',sans-serif;
+}
+
+/* ===========================
+   WRAPPER
+=========================== */
+
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    color:#FFFFFF;
+    text-decoration:none;
+    font-size:clamp(.85rem,1.15vw,1.2rem);
+    transition:all .3s ease;
+}
+
+.contact-item i{
+    width:20px;
+    color:#FFFFFF;
+    font-size:18px;
+}
+
+.contact-item:hover{
+    color:#B89A4A;
+    transform:translateX(4px);
+}
+
+.contact-item:hover i{
+    color:#B89A4A;
+}
+
+.cards-wrapper{
+    width:min(100%,900px);
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    align-items:center;
+}
+
+/* ===========================
+   CARD BASE
+=========================== */
+
+.business-card{
+    position:relative;
+    width:100%;
+    aspect-ratio: 16 / 9;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 78% 35%, rgba(255,255,255,.04), transparent 20%),
+        radial-gradient(circle at 60% 50%, rgba(255,255,255,.02), transparent 30%),
+        linear-gradient(145deg,#060607,#111114 55%,#16161b);
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.55),
+        inset 0 0 0 1px rgba(255,255,255,.03);
+}
+
+/* ===========================
+   SUBTLE TEXTURE
+=========================== */
+
+.business-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    opacity:.04;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            rgba(255,255,255,.08) 0px,
+            rgba(255,255,255,.08) 1px,
+            transparent 1px,
+            transparent 3px
+        );
+    mix-blend-mode:soft-light;
+    pointer-events:none;
+}
+
+/* ===========================
+   NOTEBOOK EFFECT
+=========================== */
+
+.notebook{
+    position:absolute;
+    left:-15px;
+    top:-10px;
+    width:170px;
+    height:180px;
+}
+
+.sheet{
+    position:absolute;
+    width:120px;
+    height:160px;
+    background:
+        linear-gradient(
+            135deg,
+            #16171a,
+            #070708
+        );
+    box-shadow:
+        0 20px 30px rgba(0,0,0,.45);
+}
+
+.sheet-1{
+    transform:rotate(-18deg);
+    left:18px;
+    top:0;
+}
+
+.sheet-2{
+    transform:rotate(-12deg);
+    left:28px;
+    top:8px;
+}
+
+.sheet-3{
+    transform:rotate(-7deg);
+    left:40px;
+    top:16px;
+}
+
+/* ===========================
+   FLARES
+=========================== */
+
+.flare{
+    position:absolute;
+    border-radius:50%;
+    pointer-events:none;
+}
+
+.flare-lg{
+    width:220px;
+    height:220px;
+    right:-60px;
+    bottom:-30px;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.04) 40%,
+            transparent 75%
+        );
+    backdrop-filter:blur(8px);
+}
+
+.flare-md{
+    width:110px;
+    height:110px;
+    right:110px;
+    bottom:70px;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.08),
+            transparent 70%
+        );
+}
+
+.flare-sm{
+    width:70px;
+    height:70px;
+    right:140px;
+    top:120px;
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.09),
+            transparent 70%
+        );
+}
+
+/* sparkle */
+.business-card::after{
+    content:"✦";
+    position:absolute;
+    right:90px;
+    bottom:40px;
+    color:rgba(255,255,255,.3);
+    font-size:22px;
+}
+
+/* ===========================
+   FRONT
+=========================== */
+
+.front-layout{
+    position:relative;
+    z-index:3;
+    display:grid;
+    grid-template-columns:130px 2px 1fr;
+    align-items:center;
+    height:100%;
+    padding:35px 55px;
+}
+
+.left-panel{
+    display:flex;
+    justify-content:center;
+}
+
+.divider{
+    width:2px;
+    height:190px;
+    background:white;
+    opacity:.9;
+}
+
+.right-panel{
+    padding-left:35px;
+}
+
+.right-panel h1{
+    color:white;
+    font-size:clamp(2rem,3.2vw,3.6rem);
+    font-weight:800;
+    line-height:1;
+}
+
+.right-panel h3{
+    color:white;
+    margin-top:8px;
+    font-size:clamp(.9rem,1.2vw,1.35rem);
+    font-weight:600;
+}
+
+.contact-list{
+    margin-top:34px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    color:white;
+    font-size:clamp(.85rem,1.15vw,1.2rem);
+}
+
+.contact-item i{
+    width:20px;
+    color:white;
+    font-size:18px;
+}
+
+/* ===========================
+   HO LOGO
+=========================== */
+
+.ho-logo{
+    text-align:center;
+    color:white;
+}
+
+.logt{
+    width:80px;
+    height:auto;
+}
+
+.scnlg{
+    width:120px;
+    height:auto;
+}
+
+.logo-mark{
+    font-size:40px;
+    font-weight:800;
+    letter-spacing:-2px;
+    line-height:1;
+}
+
+.ho-logo span{
+    display:block;
+    font-size:8px;
+    margin-top:6px;
+    letter-spacing:1px;
+}
+
+/* ===========================
+   SCENIUS LOGO
+=========================== */
+
+.scenius-logo{
+    position:relative;
+    display:inline-block;
+    text-align:center;
+    color:white;
+}
+
+.gold-arc{
+    position:absolute;
+    width:70px;
+    height:34px;
+    left:50%;
+    top:-10px;
+    transform:translateX(-50%);
+    border-top:3px solid var(--gold);
+    border-radius:80px 80px 0 0;
+    box-shadow:0 0 15px var(--goldGlow);
+}
+
+.scenius-logo h4,
+.scenius-logo h2{
+    font-weight:800;
+    letter-spacing:.5px;
+}
+
+.scenius-logo h4{
+    font-size:16px;
+}
+
+.scenius-logo p{
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.large h2{
+    font-size:52px;
+}
+
+.large p{
+    font-size:18px;
+    letter-spacing:4px;
+}
+
+.large .gold-arc{
+    width:160px;
+    height:70px;
+    border-top-width:5px;
+    top:-20px;
+}
+
+.bottom-logo{
+    position:absolute;
+    bottom:22px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:3;
+}
+
+/* ===========================
+   BACK
+=========================== */
+
+.corner-logo{
+    position:absolute;
+    top:50px;
+    left:60px;
+    color:white;
+    z-index:4;
+}
+
+.center-content{
+    position:relative;
+    z-index:3;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:55px;
+}
+
+.company-name{
+    color:white;
+    font-size:clamp(1.5rem,2vw,2.2rem);
+    font-weight:800;
+    text-decoration:underline;
+    text-underline-offset:6px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:768px){
+
+    .front-layout{
+        grid-template-columns:80px 2px 1fr;
+        padding:25px;
+    }
+
+    .divider{
+        height:140px;
+    }
+
+    .contact-list{
+        margin-top:20px;
+        gap:12px;
+    }
+
+    .logo-mark{
+        font-size:28px;
+    }
+
+    .notebook{
+        transform:scale(.8);
+        transform-origin:top left;
+    }
+
+    .corner-logo{
+        left:25px;
+        top:25px;
+    }
+
+    .center-content{
+        gap:35px;
+    }
+
+    .large h2{
+        font-size:34px;
+    }
+
+    .large p{
+        font-size:12px;
+    }
+}
+
+@media (max-width:560px){
+
+    .front-layout{
+        grid-template-columns:60px 2px 1fr;
+        padding:18px;
+    }
+
+    .right-panel{
+        padding-left:18px;
+    }
+
+    .divider{
+        height:120px;
+    }
+
+    .contact-item{
+        gap:10px;
+        font-size:11px;
+    }
+
+    .large h2{
+        font-size:28px;
+    }
+
+    .company-name{
+        font-size:1rem;
+    }
+}
