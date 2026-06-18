@@ -472,4 +472,28 @@ body{
     .company-name{
         font-size:1rem;
     }
+    .contact-item{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    color:#FFFFFF;
+    text-decoration:none;
+    font-size:clamp(.85rem,1.15vw,1.2rem);
+    transition:all .3s ease;
+}
+
+.contact-item i{
+    width:20px;
+    color:#FFFFFF;
+    font-size:18px;
+}
+
+.contact-item:hover{
+    color:#B89A4A;
+    transform:translateX(4px);
+}
+
+.contact-item:hover i{
+    color:#B89A4A;
+}
 }
